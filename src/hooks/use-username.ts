@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
+import { nanoid } from "nanoid"
+import { useEffect, useState } from "react"
 
 const ANIMALS = ["wolf", "hawk", "bear", "shark"]
 const STORAGE_KEY = "chat_username"
@@ -10,27 +10,24 @@ const generateUsername = () => {
 }
 
 export const useUsername = () => {
-  const [username, setUsername] = useState("");
-    
-  useEffect(() => {     //a React hook that runs side effects after render.
+  const [username, setUsername] = useState("")
+
+  useEffect(() => {
     const main = () => {
-      const stored = localStorage.getItem(STORAGE_KEY) //Tries to read the username previously saved in the browser.
-    
-      if(stored) {
+      const stored = localStorage.getItem(STORAGE_KEY)
+
+      if (stored) {
         setUsername(stored)
         return
       }
-
-      //if user is connecting for first time
+      
       const generated = generateUsername()
-      localStorage.setItem(STORAGE_KEY, generated) //store the generated username in browser storage
+      localStorage.setItem(STORAGE_KEY, generated)
       setUsername(generated)
     }
 
-    main() 
+    main()
   }, [])
 
-  return { username } 
-} 
-
-
+  return { username }
+}
