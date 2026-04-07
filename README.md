@@ -2,7 +2,6 @@
 
 > A full-stack, real-time secure messaging application built with Next.js, Upstash Redis, and TypeScript.
 
-🔗 **Live Demo:** [realtime-chat-inky.vercel.app](https://realtime-chat-inky.vercel.app)
 
 ---
 
